@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-
-import 'views/login/login_page.dart';
+import 'package:flutter_examination/di/app_providers.dart';
+import 'package:flutter_examination/views/movie/movie_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: appProviders,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         unselectedWidgetColor: Colors.white
       ),
-      home: const LoginPage(),
+      home: MoviePage(),
     );
   }
 }
